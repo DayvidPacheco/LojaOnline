@@ -1,0 +1,69 @@
+import java.util.Scanner;
+public class lojaonlinefor {
+  public static void main (String[] args) {
+    
+    int produto=0, quant=0, res=0, i=0, op; 
+    double precoTotal=0, valor=0;
+    
+    Scanner leia = new Scanner(System.in);
+    System.out.println("Nº  Produto           Valor");
+    System.out.println("1   Mouse Gamer      $ 450,00");
+    System.out.println("2   Mouse Sem Fio    $ 250,00");
+    System.out.println("3   Mousepad         $ 100,00");
+    System.out.println("4   Headset Gamer    $ 490,00");
+    System.out.println("5   Teclaco          $ 350,00");
+    System.out.println("6   Cadeira          $ 890,00");
+    System.out.println("7   Notebook gamer   $ 3990,00");
+    System.out.println("8   Pc Gamer         $ 5550,00");
+    
+     for(int c=0;c>1;c++){
+      System.out.println("Informe o numero do produto:");
+      produto = leia.nextInt();
+      System.out.println("Informe a quantidade:");
+      quant = leia.nextInt();
+      if (produto == 1){
+        precoTotal=precoTotal+quant*450;
+      }else if (produto == 2){
+        precoTotal=precoTotal+quant*250;
+      }else if (produto == 3){
+        precoTotal=precoTotal+quant*100;
+      }else if (produto == 4){
+        precoTotal=precoTotal+quant*490;
+      }else if (produto == 5){
+        precoTotal=precoTotal+quant*350;
+      }else if (produto == 6){
+        precoTotal=precoTotal+quant*890;
+      }else if (produto == 7){
+       precoTotal=precoTotal+quant*3990;
+      }else if (produto == 8){
+        precoTotal=precoTotal+quant*5500;
+      }
+      
+      System.out.println("Deseja comprar mais algum produto?(1=sim/2=não):");
+      res = leia.nextInt();
+      if(res==2){
+        i=-1;
+      }
+     }
+       System.out.println("Valor total do pedido é de : R$"+precoTotal);
+    
+System.out.println("Opções de pagamento:");
+    System.out.println("[1] - a vista");
+    System.out.println("[2] - 2x acresc de 10%");
+    System.out.println("[3] - 3x acresc de 20%");
+    System.out.println("Qual a sua opção de pagamento (1/2/3)?");
+    op = leia.nextInt();
+    if (op==1) {
+      System.out.printf ("Pagamento à vista, no valor de= R$ %.2f\n", precoTotal);
+    }
+    if (op==2){
+     
+       System.out.printf("Pagamento em 2x, no valor total de= R$ %.2f\n ",(precoTotal*1.10));
+       System.out.printf("Pagamento em 2x, valor de cada parcela de:R$ %.2f\n",((precoTotal*1.10)/2));
+    }
+    if (op==3){
+       System.out.printf("Pagamento em 2x, no valor total de: R$ %.2f\n",(precoTotal*1.20));
+       System.out.printf("Pagamento em 2x, valor de cada parcela de:R$ %.2f\n",((precoTotal*1.20)/3));
+    }
+  }
+}
